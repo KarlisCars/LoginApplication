@@ -68,7 +68,7 @@
                                                     <constraint firstAttribute="height" constant="34" id="y6d-sC-dCS"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -84,7 +84,6 @@
                                                 <state key="normal" title="Log in"/>
                                                 <connections>
                                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DY9-IX-X3r"/>
-                                                    <segue destination="bqd-j7-5hv" kind="show" id="Uc0-wA-6v7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9N-Te-M7X">
@@ -118,7 +117,7 @@
                         <outlet property="emailTextField" destination="tqg-Hs-93F" id="RjB-9h-J1E"/>
                         <outlet property="passwordTextField" destination="WxW-TS-6f5" id="uY3-5Q-cUs"/>
                         <outlet property="warningLabel" destination="jBv-oS-zZj" id="l7U-NO-vbn"/>
-                        <segue destination="bqd-j7-5hv" kind="show" id="hTT-kP-MSg"/>
+                        <segue destination="bqd-j7-5hv" kind="show" identifier="fireSegue" id="hTT-kP-MSg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -204,7 +203,4 @@
         <image name="Firebase" width="1280" height="440"/>
         <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="hTT-kP-MSg"/>
-    </inferredMetricsTieBreakers>
 </document>
