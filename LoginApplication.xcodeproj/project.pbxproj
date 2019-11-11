@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5C0FECD35F3AED9E34DAF448 /* Pods_LoginApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F9936F5C36B71E96E15E11 /* Pods_LoginApplication.framework */; };
+		BC3668DD2379AC21007CEA50 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3668DC2379AC20007CEA50 /* Extensions.swift */; };
 		BCC3A0D82376A91A0089D425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC3A0D72376A91A0089D425 /* AppDelegate.swift */; };
 		BCC3A0DA2376A91A0089D425 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC3A0D92376A91A0089D425 /* SceneDelegate.swift */; };
 		BCC3A0DF2376A91A0089D425 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC3A0DD2376A91A0089D425 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		18F9936F5C36B71E96E15E11 /* Pods_LoginApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7ACC641F74DEBE58CFAF1C /* Pods-LoginApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginApplication.release.xcconfig"; path = "Target Support Files/Pods-LoginApplication/Pods-LoginApplication.release.xcconfig"; sourceTree = "<group>"; };
 		AA6DCC2B0B79A399FD146A74 /* Pods-LoginApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginApplication.debug.xcconfig"; path = "Target Support Files/Pods-LoginApplication/Pods-LoginApplication.debug.xcconfig"; sourceTree = "<group>"; };
+		BC3668DC2379AC20007CEA50 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BCC3A0D42376A91A0089D425 /* LoginApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC3A0D72376A91A0089D425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCC3A0D92376A91A0089D425 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,8 +62,15 @@
 				AA6DCC2B0B79A399FD146A74 /* Pods-LoginApplication.debug.xcconfig */,
 				5B7ACC641F74DEBE58CFAF1C /* Pods-LoginApplication.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BC3668DB2379ABE7007CEA50 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BC3668DC2379AC20007CEA50 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BCC3A0CB2376A9190089D425 = {
@@ -90,6 +99,7 @@
 				BCC3A11E2376D6550089D425 /* View */,
 				BCC3A0E02376A9250089D425 /* Assets.xcassets */,
 				BCC3A0E52376A9250089D425 /* Info.plist */,
+				BC3668DB2379ABE7007CEA50 /* Extensions */,
 				BCE59DF22376E43000476CEA /* GoogleService-Info.plist */,
 			);
 			path = LoginApplication;
@@ -238,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC3668DD2379AC21007CEA50 /* Extensions.swift in Sources */,
 				BCC3A1192376D6020089D425 /* LoginViewController.swift in Sources */,
 				BCC3A0D82376A91A0089D425 /* AppDelegate.swift in Sources */,
 				BCC3A1202376D6F60089D425 /* TasksTableViewController.swift in Sources */,

@@ -17,9 +17,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var warningLabel: UILabel!
+    
+    // MARK: - ViewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
     
@@ -79,3 +83,4 @@ class LoginViewController: UIViewController {
     */
 
 }
+

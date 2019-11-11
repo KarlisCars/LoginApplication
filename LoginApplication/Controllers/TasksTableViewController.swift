@@ -22,6 +22,8 @@ class TasksTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     @IBAction func logoutTapped(_ sender: Any) {
+       
+        
     }
     
     @IBAction func addTapped(_ sender: Any) {
