@@ -142,12 +142,15 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FUm-TZ-y34" id="yJY-C7-CdD"/>
+                            <outlet property="delegate" destination="FUm-TZ-y34" id="e2b-Qi-kCs"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="frA-35-qoC">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="HrD-3c-7Je">
                             <connections>
                                 <action selector="logoutTapped:" destination="FUm-TZ-y34" id="GQv-K7-AQs"/>
-                                <segue destination="EqS-48-fTz" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="HQ4-py-btG"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="q4q-TI-fR0">
@@ -156,6 +159,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Oih-N1-YQj" id="peu-Yd-sfc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="42x-lh-4Wl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
