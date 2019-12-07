@@ -44,10 +44,14 @@ class LoginViewController: UIViewController {
             
             Auth.auth().addStateDidChangeListener { (auth, user) in
                 if user != nil {
-                    self.performSegue(withIdentifier: self.segueIndentifier, sender: nil)
+                    self.goToTasksViewController()
+                   // self.performSegue(withIdentifier: self.segueIndentifier, sender: nil)
                 }
             }
         }
+    
+    // MARK: - Keyboard
+    
         
         @objc func keyboardWillShow(notification: Notification) {
             if self.view.frame.origin.y == 0{
@@ -64,10 +68,13 @@ class LoginViewController: UIViewController {
             }
         }
         
+    
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             self.view.endEditing(true)
         }
         
+  // MARK: - Warning label
+    
         func displayWarningLabel(withText text:String){
             warningLabel.text = text
             UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: { [weak self] in
@@ -76,6 +83,7 @@ class LoginViewController: UIViewController {
                 self?.warningLabel.alpha = 0
             }
         }
+    // MARK: - Buttons
     
     @IBAction func loginButton(_ sender: Any) {
         guard let email = emailTextField.text, let password = passwordTextField.text, email != "", password != "" else {
@@ -88,28 +96,37 @@ class LoginViewController: UIViewController {
             return
         }
         if user != nil{
-            self.performSegue(withIdentifier: self.segueIndentifier, sender: nil)
+           
+            self.goToTasksViewController()
+            // self.performSegue(withIdentifier: self.segueIndentifier, sender: nil)
             return
         }
         self.displayWarningLabel(withText: "No such user")
     }
    
+        
     }
     
-    @IBAction func registerButton(_ sender: Any) {
-        guard let email = emailTextField.text, let password = passwordTextField.text, email != "", password != "" else {
-                    displayWarningLabel(withText: "Email/Password incorrect!")
-                    return
-                }
-                Auth.auth().createUser(withEmail: email, password: password, completion:  { (user, error) in
-                    guard error == nil, user != nil else {
-                        print(error!.localizedDescription)
-                        self.displayWarningLabel(withText: "User is not creadted!")
-                        return
-                    }
-                    let userRef = self.ref.child((user?.user.uid)!)
-                    userRef.setValue(["email": user?.user.email])
-                })
+//    @IBAction func registerButton(_ sender: Any) {
+//        guard let email = emailTextField.text, let password = passwordTextField.text, email != "", password != "" else {
+//                    displayWarningLabel(withText: "Email/Password incorrect!")
+//                    return
+//                }
+//                Auth.auth().createUser(withEmail: email, password: password, completion:  { (user, error) in
+//                    guard error == nil, user != nil else {
+//                        print(error!.localizedDescription)
+//                        self.displayWarningLabel(withText: "User is not creadted!")
+//                        return
+//                    }
+//                    let userRef = self.ref.child((user?.user.uid)!)
+//                    userRef.setValue(["email": user?.user.email])
+//                })
+//    }
+    
+    func goToTasksViewController(){
+        let initController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TasksVC") as! UINavigationController
+        view.endEditing(true)
+        present(initController, animated: true, completion: nil)
     }
 }
 

@@ -27,14 +27,14 @@ class TasksTableViewController: UIViewController {
         }
         user = Users(user: currentUser)
         ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("tasks")
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         ref.observe(.value, with: { (snapshot) in
-          var newTask = [Tasks]()
+            var newTask = [Tasks]()
             for item in snapshot.children{
                 let task = Tasks(snapshot: item as! DataSnapshot)
                 newTask.append(task)
@@ -52,31 +52,48 @@ class TasksTableViewController: UIViewController {
     
     
     @IBAction func logoutTapped(_ sender: Any) {
-            do{
-                try Auth.auth().signOut()
-                print("leaving")
-            }catch let singOutErr{
-                print("Failed to sign out", singOutErr)
-            }
-            dismiss(animated: true, completion: nil)
+        do{
+            try Auth.auth().signOut()
+            print("leaving")
+        }catch let singOutErr{
+            print("Failed to sign out", singOutErr)
         }
-        
-        func toggleCompletion(_ cell: UITableViewCell, isCompleted: Bool){
-            cell.accessoryType = isCompleted ? .checkmark : .none
-        }
-        
-
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func toggleCompletion(_ cell: UITableViewCell, isCompleted: Bool){
+        cell.accessoryType = isCompleted ? .checkmark : .none
+    }
+    
+    
     @IBAction func addTapped(_ sender: Any) {
-        let alertController = UIAlertController(title: "New ToDo Task", message: "Add New", preferredStyle: .alert)
         
-        alertController.addTextField()
+        
+        let alertController = UIAlertController(title: "Link Title", message: "Add New Title and Url link.", preferredStyle: .alert)
+        
+        alertController.addTextField { (textField:UITextField) in
+            textField.placeholder = "Title"
+        }
+        
+        alertController.addTextField { (textField:UITextField) in
+            textField.placeholder = "Url"
+        }
+        
+        // alertController.addTextField()
         
         let save = UIAlertAction(title: "Save", style: .cancel) { _ in
-            guard let textField = alertController.textFields?.first, textField.text != "" else {return}
+            guard let titleTextField = alertController.textFields?.first, titleTextField.text != "" else {return}
             
-            let task = Tasks(title: textField.text!, userId: self.user.uid)
+            guard let urlTextField = alertController.textFields?.last, urlTextField.text != "" else {return}
+            
+            let task = Tasks(title: titleTextField.text!, userId: self.user.uid, url :urlTextField.text!)
+            
             let taskRef = self.ref.child(task.title.lowercased())
+            
             taskRef.setValue(task.convertToDict())
+            
+            //            let taskUrl = self.ref.child(task.url.self)
+            //            taskUrl.setValue(task.convertToDict())
         }
         let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         
@@ -84,50 +101,82 @@ class TasksTableViewController: UIViewController {
         alertController.addAction(cancel)
         
         present(alertController, animated: true, completion: nil)
-            
+        
     }
 }
-    // MARK: - Table view data source
+// MARK: - Table view data source
 //test change for git
+
+extension TasksTableViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tasks.count
+    }
     
-   extension TasksTableViewController: UITableViewDelegate, UITableViewDataSource {
-       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-           return tasks.count
-       }
-       
-       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           
-           let cell = tableView.dequeueReusableCell(withIdentifier: "fireCell", for: indexPath)
-           
-           let task = tasks[indexPath.row]
-           
-           let taskTitle = task.title
-           cell.textLabel?.text = taskTitle
-           cell.backgroundColor = .clear
-           
-           toggleCompletion(cell, isCompleted: task.completed)
-           return cell
-       }
-       
-       func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-           return true
-       }
-       
-       func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-           if editingStyle == .delete {
-               let task = tasks[indexPath.row]
-               task.ref?.removeValue()
-           }
-       }
-       
-       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           guard let cell = tableView.cellForRow(at: indexPath) else {return}
-           
-           let task = tasks[indexPath.row]
-           let isCompleted = !task.completed
-           toggleCompletion(cell, isCompleted: isCompleted)
-           task.ref?.updateChildValues(["completed": isCompleted])
-       }
-       
-   }//ex
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "fireCell", for: indexPath)
+        
+        let task = tasks[indexPath.row]
+        
+        let taskTitle = task.title
+        let urlTitle = task.url
+        
+        cell.textLabel?.text = taskTitle
+        cell.detailTextLabel?.text = urlTitle
+        cell.backgroundColor = .clear
+        
+        toggleCompletion(cell, isCompleted: task.completed)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    //        if editingStyle == .delete {
+    //            let task = tasks[indexPath.row]
+    //            task.ref?.removeValue()
+    //        }
+    
+    //    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteItem = UIContextualAction(style: .destructive, title: "Delete") {  (contextualAction, view, boolValue) in
+            let task = self.tasks[indexPath.row]
+            task.ref?.removeValue()
+        }
+        
+        let checkTitle = UIContextualAction(style: .normal, title: "Check") {  (contextualAction, view, boolValue) in
+            guard let cell = tableView.cellForRow(at: indexPath) else {return}
+            let task = self.tasks[indexPath.row]
+            let isCompleted = !task.completed
+            self.toggleCompletion(cell, isCompleted: isCompleted)
+            task.ref?.updateChildValues(["completed": isCompleted])
+        }
+        checkTitle.backgroundColor = UIColor.blue
+        
+        let swipeActions = UISwipeActionsConfiguration(actions: [deleteItem, checkTitle])
+        
+        return swipeActions
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc: WebViewController = storyBoard.instantiateViewController(identifier: "WebViewController") as! WebViewController
+        
+        vc.passedValue = tasks[indexPath.row].url
+        
+        navigationController?.pushViewController(vc, animated: true)
+        //        let task = tasks[indexPath.row]
+        //        let isCompleted = !task.completed
+        //        toggleCompletion(cell, isCompleted: isCompleted)
+        //        task.ref?.updateChildValues(["completed": isCompleted])
+    }
+    
+    
+}//ex
 

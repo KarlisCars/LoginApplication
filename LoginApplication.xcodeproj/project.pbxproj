@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5C0FECD35F3AED9E34DAF448 /* Pods_LoginApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F9936F5C36B71E96E15E11 /* Pods_LoginApplication.framework */; };
 		BC3668DD2379AC21007CEA50 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3668DC2379AC20007CEA50 /* Extensions.swift */; };
+		BC76F029239B9EDD00F5D4F4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC76F028239B9EDD00F5D4F4 /* SignUpViewController.swift */; };
+		BC76F02B239BCEBB00F5D4F4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC76F02A239BCEBB00F5D4F4 /* WebViewController.swift */; };
 		BC793E29237B0A830095A5A4 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC793E28237B0A830095A5A4 /* Users.swift */; };
 		BC793E2B237B0B3C0095A5A4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC793E2A237B0B3C0095A5A4 /* Task.swift */; };
 		BCC3A0D82376A91A0089D425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC3A0D72376A91A0089D425 /* AppDelegate.swift */; };
@@ -26,6 +28,8 @@
 		5B7ACC641F74DEBE58CFAF1C /* Pods-LoginApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginApplication.release.xcconfig"; path = "Target Support Files/Pods-LoginApplication/Pods-LoginApplication.release.xcconfig"; sourceTree = "<group>"; };
 		AA6DCC2B0B79A399FD146A74 /* Pods-LoginApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginApplication.debug.xcconfig"; path = "Target Support Files/Pods-LoginApplication/Pods-LoginApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		BC3668DC2379AC20007CEA50 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BC76F028239B9EDD00F5D4F4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		BC76F02A239BCEBB00F5D4F4 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		BC793E28237B0A830095A5A4 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		BC793E2A237B0B3C0095A5A4 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		BCC3A0D42376A91A0089D425 /* LoginApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,7 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				BCC3A1182376D6020089D425 /* LoginViewController.swift */,
+				BC76F028239B9EDD00F5D4F4 /* SignUpViewController.swift */,
 				BCC3A11F2376D6F60089D425 /* TasksTableViewController.swift */,
+				BC76F02A239BCEBB00F5D4F4 /* WebViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -263,7 +269,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC3668DD2379AC21007CEA50 /* Extensions.swift in Sources */,
+				BC76F02B239BCEBB00F5D4F4 /* WebViewController.swift in Sources */,
 				BCC3A1192376D6020089D425 /* LoginViewController.swift in Sources */,
+				BC76F029239B9EDD00F5D4F4 /* SignUpViewController.swift in Sources */,
 				BCC3A0D82376A91A0089D425 /* AppDelegate.swift in Sources */,
 				BCC3A1202376D6F60089D425 /* TasksTableViewController.swift in Sources */,
 				BC793E29237B0A830095A5A4 /* Users.swift in Sources */,
