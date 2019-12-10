@@ -32,7 +32,7 @@
 		BC76F02A239BCEBB00F5D4F4 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		BC793E28237B0A830095A5A4 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		BC793E2A237B0B3C0095A5A4 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		BCC3A0D42376A91A0089D425 /* LoginApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCC3A0D42376A91A0089D425 /* LinkNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC3A0D72376A91A0089D425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCC3A0D92376A91A0089D425 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BCC3A0DE2376A91A0089D425 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		BCC3A0D52376A91A0089D425 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BCC3A0D42376A91A0089D425 /* LoginApplication.app */,
+				BCC3A0D42376A91A0089D425 /* LinkNote.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,7 +171,7 @@
 			);
 			name = LoginApplication;
 			productName = LoginApplication;
-			productReference = BCC3A0D42376A91A0089D425 /* LoginApplication.app */;
+			productReference = BCC3A0D42376A91A0089D425 /* LinkNote.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -429,7 +429,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kcars.LoginApplication;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LinkNote;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -448,7 +448,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kcars.LoginApplication;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LinkNote;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

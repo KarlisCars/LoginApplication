@@ -10,32 +10,35 @@
         <!--SignUp-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="SignUp" customClass="SignUpViewController" customModule="LoginApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="SignUp" customClass="SignUpViewController" customModule="LinkNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8898bf28b5e4283ad2462453cfb329bb" translatesAutoresizingMaskIntoConstraints="NO" id="s6L-dc-TmC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="85" translatesAutoresizingMaskIntoConstraints="NO" id="Dzs-oJ-5FN">
                                 <rect key="frame" x="52.5" y="36.5" width="215" height="475"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="M9T-Er-jUp">
                                         <rect key="frame" x="30" y="0.0" width="155" height="180"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Firebase" translatesAutoresizingMaskIntoConstraints="NO" id="hew-Qc-szs">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="170131112404-gettyimages-494098244-large-169" translatesAutoresizingMaskIntoConstraints="NO" id="hew-Qc-szs">
                                                 <rect key="frame" x="0.0" y="0.0" width="155" height="82"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="155" id="4ui-Mg-7Ob"/>
                                                     <constraint firstAttribute="height" constant="82" id="CaF-lf-SnQ"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FireBaseTodo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MF4-J5-y6e">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link Note" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MF4-J5-y6e">
                                                 <rect key="frame" x="0.0" y="101" width="155" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="155" id="f1n-DF-BrP"/>
                                                     <constraint firstAttribute="height" constant="30" id="xXC-FB-YbQ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User does not exist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBv-oS-zZj">
@@ -65,7 +68,12 @@
                                                                     <constraint firstAttribute="height" constant="34" id="7fS-db-aYv"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <integer key="value" value="15"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WxW-TS-6f5">
                                                                 <rect key="frame" x="0.0" y="48" width="215" height="34"/>
@@ -74,7 +82,12 @@
                                                                     <constraint firstAttribute="height" constant="34" id="y6d-sC-dCS"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <integer key="value" value="15"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -124,8 +137,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s6L-dc-TmC" secondAttribute="trailing" id="EEN-nR-hxm"/>
+                            <constraint firstItem="s6L-dc-TmC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VW5-n3-dKT"/>
                             <constraint firstItem="Dzs-oJ-5FN" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="dmv-dk-nra"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="s6L-dc-TmC" secondAttribute="bottom" id="h0p-PH-kPs"/>
                             <constraint firstItem="Dzs-oJ-5FN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hWm-Bn-7zt"/>
+                            <constraint firstItem="s6L-dc-TmC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jCv-xZ-265"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -143,11 +160,12 @@
         <!--Tasks Table View Controller-->
         <scene sceneID="deQ-8w-u5S">
             <objects>
-                <viewController id="FUm-TZ-y34" customClass="TasksTableViewController" customModule="LoginApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FUm-TZ-y34" customClass="TasksTableViewController" customModule="LinkNote" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Oih-N1-YQj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexColor" cocoaTouchSystemColor="darkTextColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="fireCell" textLabel="Hyu-Ya-TnP" detailTextLabel="OtP-gS-sfq" style="IBUITableViewCellStyleSubtitle" id="W0T-ey-ueG">
                                 <rect key="frame" x="0.0" y="28" width="320" height="55.5"/>
@@ -202,7 +220,7 @@
         <!--Web View Controller-->
         <scene sceneID="MdZ-Lu-T1x">
             <objects>
-                <viewController storyboardIdentifier="WebViewController" modalPresentationStyle="fullScreen" id="3Sn-8C-hez" customClass="WebViewController" customModule="LoginApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" modalPresentationStyle="fullScreen" id="3Sn-8C-hez" customClass="WebViewController" customModule="LinkNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="13V-Vt-x41">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,35 +252,108 @@
             </objects>
             <point key="canvasLocation" x="4628" y="106"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="yXQ-Vp-DOD">
+            <objects>
+                <viewController id="bwZ-8C-h2k" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fdi-d5-fR0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1560932668-46f7a662129e" translatesAutoresizingMaskIntoConstraints="NO" id="g69-d4-ct3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="0Pj-Vh-d2v">
+                                <rect key="frame" x="16" y="16" width="288" height="482"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_2880" translatesAutoresizingMaskIntoConstraints="NO" id="UvN-M5-fn0">
+                                        <rect key="frame" x="64" y="0.0" width="160" height="160"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="1GL-Bd-MXP"/>
+                                            <constraint firstAttribute="height" constant="160" id="Du6-3Z-gLq"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="80"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kārlis Cars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAl-Ak-XfE">
+                                        <rect key="frame" x="79" y="184" width="130" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="3SI-f9-a5n"/>
+                                            <constraint firstAttribute="height" constant="34" id="UDL-23-LhU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6bF-LD-Qfj">
+                                        <rect key="frame" x="24" y="242" width="240" height="240"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="240" id="64d-5G-Qy3"/>
+                                            <constraint firstAttribute="width" constant="240" id="asC-bb-xVQ"/>
+                                        </constraints>
+                                        <string key="text">Main characteristics: 27 year old male, Latvian, detail oriented.
+Interests and hobbies: fishing, handcrafting, electronics, coding, Minecraft.
+Unique features: have built a family home. Prefers hands on experience. </string>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="g69-d4-ct3" firstAttribute="top" secondItem="XyD-AF-wGn" secondAttribute="top" id="3Bu-eL-qqe"/>
+                            <constraint firstItem="0Pj-Vh-d2v" firstAttribute="leading" secondItem="XyD-AF-wGn" secondAttribute="leading" constant="16" id="Abj-yf-lxv"/>
+                            <constraint firstAttribute="bottom" secondItem="g69-d4-ct3" secondAttribute="bottom" id="KzW-yW-fpz"/>
+                            <constraint firstItem="XyD-AF-wGn" firstAttribute="trailing" secondItem="0Pj-Vh-d2v" secondAttribute="trailing" constant="16" id="SQA-YM-sHp"/>
+                            <constraint firstAttribute="trailing" secondItem="g69-d4-ct3" secondAttribute="trailing" id="ie6-dr-meR"/>
+                            <constraint firstItem="g69-d4-ct3" firstAttribute="leading" secondItem="XyD-AF-wGn" secondAttribute="leading" id="jUw-mT-oBe"/>
+                            <constraint firstItem="0Pj-Vh-d2v" firstAttribute="top" secondItem="XyD-AF-wGn" secondAttribute="top" constant="16" id="o3G-bO-eQX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XyD-AF-wGn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qzE-lC-lgC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1515" y="-611.61971830985919"/>
+        </scene>
         <!--Login-->
         <scene sceneID="E1u-PO-53Z">
             <objects>
-                <viewController id="rkv-eC-nSe" customClass="LoginViewController" customModule="LoginApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rkv-eC-nSe" customClass="LoginViewController" customModule="LinkNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yQT-HH-2xv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8898bf28b5e4283ad2462453cfb329bb" translatesAutoresizingMaskIntoConstraints="NO" id="wfU-lG-d08">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="67" translatesAutoresizingMaskIntoConstraints="NO" id="z51-57-4UF">
                                 <rect key="frame" x="52.5" y="77.5" width="215" height="457"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="fcZ-kq-rUf">
                                         <rect key="frame" x="30" y="0.0" width="155" height="180"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Firebase" translatesAutoresizingMaskIntoConstraints="NO" id="frq-1c-tf4">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="170131112404-gettyimages-494098244-large-169" translatesAutoresizingMaskIntoConstraints="NO" id="frq-1c-tf4">
                                                 <rect key="frame" x="0.0" y="0.0" width="155" height="82"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="82" id="ekk-Yf-Nfc"/>
                                                     <constraint firstAttribute="width" constant="155" id="fdy-nf-sSE"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FireBaseTodo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juN-4B-cTs">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link Note" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juN-4B-cTs">
                                                 <rect key="frame" x="0.0" y="101" width="155" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="155" id="ibe-d9-ahm"/>
                                                     <constraint firstAttribute="height" constant="30" id="kHe-ej-qXJ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User does not exist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iG-Xf-pXx">
@@ -292,7 +383,12 @@
                                                                     <constraint firstAttribute="height" constant="34" id="eaK-yB-L2I"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <integer key="value" value="15"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UsE-zg-vYh">
                                                                 <rect key="frame" x="0.0" y="48" width="215" height="34"/>
@@ -301,7 +397,12 @@
                                                                     <constraint firstAttribute="height" constant="34" id="p8h-8s-W9m"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <integer key="value" value="15"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -348,11 +449,28 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zr4-Zd-1Z3">
+                                <rect key="frame" x="247" y="46" width="56" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Thk-J0-ALU"/>
+                                    <constraint firstAttribute="width" constant="56" id="nuf-1v-tLY"/>
+                                </constraints>
+                                <state key="normal" image="myname"/>
+                                <connections>
+                                    <segue destination="bwZ-8C-h2k" kind="presentation" id="RrC-oh-XBy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="zr4-Zd-1Z3" firstAttribute="top" secondItem="uEl-rS-k9C" secondAttribute="top" constant="2" id="5d7-Zu-sJm"/>
+                            <constraint firstItem="uEl-rS-k9C" firstAttribute="trailing" secondItem="zr4-Zd-1Z3" secondAttribute="trailing" constant="17" id="7cC-Cg-zAg"/>
+                            <constraint firstItem="wfU-lG-d08" firstAttribute="top" secondItem="yQT-HH-2xv" secondAttribute="top" id="A48-Dj-VwN"/>
+                            <constraint firstItem="zr4-Zd-1Z3" firstAttribute="leading" secondItem="wfU-lG-d08" secondAttribute="trailing" constant="-73" id="BxP-Zf-gnY"/>
                             <constraint firstItem="z51-57-4UF" firstAttribute="centerY" secondItem="uEl-rS-k9C" secondAttribute="centerY" id="N2j-Cc-i3Z"/>
+                            <constraint firstItem="wfU-lG-d08" firstAttribute="leading" secondItem="yQT-HH-2xv" secondAttribute="leading" id="fnN-z9-6YC"/>
                             <constraint firstItem="z51-57-4UF" firstAttribute="centerX" secondItem="uEl-rS-k9C" secondAttribute="centerX" id="oIf-TM-ve2"/>
+                            <constraint firstItem="uEl-rS-k9C" firstAttribute="bottom" secondItem="wfU-lG-d08" secondAttribute="bottom" id="qxZ-m2-6Du"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uEl-rS-k9C"/>
                     </view>
@@ -372,10 +490,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oZK-zy-JsH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UO7-l8-Q8a">
+                    <navigationBar key="navigationBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="UO7-l8-Q8a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -394,7 +512,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hyp-lZ-hn9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -407,7 +525,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Firebase" width="1280" height="440"/>
+        <image name="170131112404-gettyimages-494098244-large-169" width="460" height="259"/>
+        <image name="8898bf28b5e4283ad2462453cfb329bb" width="720" height="1280"/>
+        <image name="IMG_2880" width="3024" height="4032"/>
+        <image name="myname" width="280" height="180"/>
+        <image name="photo-1560932668-46f7a662129e" width="1000" height="1510"/>
         <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
 </document>

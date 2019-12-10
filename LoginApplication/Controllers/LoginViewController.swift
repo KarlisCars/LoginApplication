@@ -9,8 +9,11 @@
 import UIKit
 import Firebase
 
+
 class LoginViewController: UIViewController {
     let segueIndentifier = "fireSegue"
+    
+
 
     var ref:DatabaseReference!
     
@@ -34,7 +37,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         warningLabel.alpha = 0
-        self.hideKeyboardWhenTappedAround()
+        //self.hideKeyboardWhenTappedAround()
         
         ref = Database.database().reference(withPath: "users")
         
@@ -56,7 +59,7 @@ class LoginViewController: UIViewController {
         @objc func keyboardWillShow(notification: Notification) {
             if self.view.frame.origin.y == 0{
                 self.view.frame.origin.y -= 150
-                let logo = UIImage(named: "fire.png")
+                let logo = UIImage(named: "tree.png")
                 let imageView = UIImageView(image: logo)
                 self.navigationItem.titleView = imageView
              

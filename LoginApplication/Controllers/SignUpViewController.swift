@@ -22,7 +22,7 @@ class SignUpViewController: UIViewController {
         
         warningLabel.alpha = 0
         
-         self.hideKeyboardWhenTappedAround()
+        // self.hideKeyboardWhenTappedAround()
         ref = Database.database().reference(withPath: "users")
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -42,7 +42,7 @@ class SignUpViewController: UIViewController {
     @objc func keyboardWillShow(notification: Notification) {
             if self.view.frame.origin.y == 0{
                 self.view.frame.origin.y -= 150
-                let logo = UIImage(named: "fire.png")
+                let logo = UIImage(named: "tree.png")
                 let imageView = UIImageView(image: logo)
                 self.navigationItem.titleView = imageView
              
